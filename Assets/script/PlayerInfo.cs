@@ -10,6 +10,7 @@ public class PlayerInfo {
     {
         public float Hp;
         public float MaxHp;
+        public float PerLVHp;
         public void Set(float i)
         {
             Debug.Log("Set Hp" + i);
@@ -21,12 +22,14 @@ public class PlayerInfo {
     {
         public float Mp;
         public float MaxMp;
+        public float PerLVMp;
     }
     [System.Serializable]
     public class ATstaff
     {
         public float At;
         public float MaxAt;
+        public float PerLVAt;
     }
     [System.Serializable]
     public class Agile
@@ -44,7 +47,6 @@ public class PlayerInfo {
         public Agile AG;
     }
     #endregion
-
 
     public static List<Character> characters =new List<Character>();
 
