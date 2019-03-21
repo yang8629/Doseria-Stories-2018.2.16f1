@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 //控制戰鬥環的旋轉
-public class Battlering : MonoBehaviour {
+public class BattleRing : MonoBehaviour {
 
     public float speed = 0.01f;
     public float first_angle;
