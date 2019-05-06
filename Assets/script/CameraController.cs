@@ -25,7 +25,7 @@ public class CameraController : MonoBehaviour {
         //InvokeRepeating("Rotate", 0f, 0.01f);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         //使用Time.deltaTime，使得移動時更加平滑
         //將速度進行一定比例縮放，方便控制速度(縮放多少都隨意，自己覺得數值修改方便就好)
