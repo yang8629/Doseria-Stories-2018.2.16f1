@@ -58,6 +58,7 @@ public class BattleRing : MonoBehaviour {
 
     void OnMouseDrag()                                                                      //根據拖曳距離方向 旋轉圓環
     {
+        Zoom_Out();
         Vector3 mouse = Input.mousePosition;
         float angle = 0.0f;
         mouse.z = distance;
@@ -126,10 +127,12 @@ public class BattleRing : MonoBehaviour {
             if (buffer <= 36)
             {
                 buffer = 0;
+                Zoom_In(button);
             }
             else if (buffer > 36)
             {
                 buffer = 72;
+                Zoom_In(button4);
             }
         }
         else if (buffer > 72 && buffer < 144)
@@ -137,10 +140,12 @@ public class BattleRing : MonoBehaviour {
             if (buffer <= 108)
             {
                 buffer = 72;
+                Zoom_In(button4);
             }
             else if (buffer > 108)
             {
                 buffer = 144;
+                Zoom_In(button3);
             }
         }
         else if (buffer > 144 && buffer < 216)
@@ -148,10 +153,12 @@ public class BattleRing : MonoBehaviour {
             if (buffer <= 180)
             {
                 buffer = 144;
+                Zoom_In(button3);
             }
             else if (buffer > 180)
             {
                 buffer = 216;
+                Zoom_In(button2);
             }
         }
         else if (buffer > 216 && buffer < 288)
@@ -159,10 +166,12 @@ public class BattleRing : MonoBehaviour {
             if (buffer <= 252)
             {
                 buffer = 216;
+                Zoom_In(button2);
             }
             else if (buffer > 252)
             {
                 buffer = 288;
+                Zoom_In(button1);
             }
         }
         else if (buffer > 288 && buffer < 360)
@@ -170,10 +179,12 @@ public class BattleRing : MonoBehaviour {
             if (buffer <= 324)
             {
                 buffer = 288;
+                Zoom_In(button1);
             }
             else if (buffer > 324)
             {
                 buffer = 360;
+                Zoom_In(button);
             }
         }
         rotat = Quaternion.Euler(0, buffer, 0);
@@ -183,6 +194,20 @@ public class BattleRing : MonoBehaviour {
         button2.transform.rotation = Quaternion.Euler(first_angle_x, 180, 0);
         button3.transform.rotation = Quaternion.Euler(first_angle_x, 180, 0);
         button4.transform.rotation = Quaternion.Euler(first_angle_x, 180, 0);
+    }
+
+    void Zoom_Out()
+    {
+        button.transform.localScale = new Vector3(1, 1, 1);
+        button1.transform.localScale = new Vector3(1, 1, 1);
+        button2.transform.localScale = new Vector3(1, 1, 1);
+        button3.transform.localScale = new Vector3(1, 1, 1);
+        button4.transform.localScale = new Vector3(1, 1, 1);
+    }
+
+    void Zoom_In(GameObject a)
+    {
+        a.transform.localScale = new Vector3(2, 2, 0);
     }
 
     //void Rotate()
