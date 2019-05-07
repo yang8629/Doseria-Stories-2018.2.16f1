@@ -297,7 +297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &377627761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,16 +310,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.01
-  first_angle: 0
+  first_angle_x: 0
+  first_angle_y: 0
   now_rotate: 0
   buffer: 0
+  camera_rotat: 0
   button: {fileID: 1803920343}
   button1: {fileID: 1273336585}
   button2: {fileID: 1287884613}
   button3: {fileID: 36983350}
   button4: {fileID: 1431216603}
   now_camera: {fileID: 534669902}
-  offset: {x: 0, y: 0, z: 1}
+  offset: {x: 0, y: -0.5, z: 1}
+  rotat: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &377627762
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -441,7 +444,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cffe5b319e5973e41afd2f8596b760f5, type: 3}
   m_Name: 
@@ -450,7 +453,7 @@ MonoBehaviour:
   cameraPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 6.38, z: 0}
-  speed: 20
+  speed: 25
   number: 1.84
   radius: 0
 --- !u!1 &1273336585
@@ -935,13 +938,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1803920343}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 377627764}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &1803920345
 SpriteRenderer:
   m_ObjectHideFlags: 0

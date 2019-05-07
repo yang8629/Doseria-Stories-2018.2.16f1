@@ -94,4 +94,6 @@ public class BattleInfo {
         enemyInbattle.Clear();
         characterInbattle.Clear();
     }
+
+    public static Vector3 camera_target_distance;
 }
