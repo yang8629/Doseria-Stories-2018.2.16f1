@@ -50,7 +50,7 @@ public class PlayerInfo {
 
     public static List<Character> characters =new List<Character>();
 
-    public static void setCharacter(string name, float hp, float at)
+    public static void SetCharacter(string name, float hp, float at)
     {
         Character character = new Character();
         character.Name = name;
@@ -62,7 +62,7 @@ public class PlayerInfo {
         characters.Add(character);
     }
 
-    public static void printCharacters()
+    public static void PrintCharacters()
     {
         int length = characters.Count;
         for (int i = 0; i < length; i++)
