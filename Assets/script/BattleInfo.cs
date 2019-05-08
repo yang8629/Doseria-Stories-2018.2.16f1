@@ -96,4 +96,5 @@ public class BattleInfo {
     }
 
     public static Vector3 camera_target_distance;
+    public static Vector3 camera_first_position;
 }

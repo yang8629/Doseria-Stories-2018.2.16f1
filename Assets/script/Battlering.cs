@@ -10,6 +10,7 @@ public class BattleRing : MonoBehaviour {
     public float now_rotate;
     public float buffer;
     public float camera_rotat;
+    public float pos;//生成的位置 百分比
     public GameObject button; //五個按鈕
     public GameObject button1;
     public GameObject button2;
@@ -29,15 +30,19 @@ public class BattleRing : MonoBehaviour {
     {
         //character = BattleInfo.attact_character.GetComponent<Character_Object>();
         //now_camera = character.character_camera;
-        Vector3 position = now_camera.transform.position + BattleInfo.camera_target_distance * 0.2f;
-        Vector3 rotat = now_camera.transform.rotation.eulerAngles;
+        Vector3 position = now_camera.transform.position + BattleInfo.camera_target_distance * pos;
+        Vector3 rotat = Vector3.zero;
+        rotat.y = now_camera.transform.rotation.eulerAngles.y;
         position.y += offset.y;
-        position.z += offset.z;
+        //position.z += offset.z;
         transform.position = position;
         button.transform.LookAt(now_camera.transform.position);
-        transform.RotateAround(now_camera.transform.position, Vector3.up, rotat.y);
+        transform.rotation = Quaternion.Euler(rotat);
+        //transform.RotateAround(now_camera.transform.position, Vector3.up, rotat.y);
         first_angle_x = button.transform.rotation.eulerAngles.x;
         first_angle_y = transform.rotation.eulerAngles.y;
+        SetButton();
+        Zoom_In(button);
     }
 
     void OnDisable()
@@ -71,6 +76,11 @@ public class BattleRing : MonoBehaviour {
         button2.transform.Rotate(0, angle * speed, 0);
         button3.transform.Rotate(0, angle * speed, 0);
         button4.transform.Rotate(0, angle * speed, 0);
+        SetButton();
+    }
+
+    void SetButton()
+    {
         button.transform.LookAt(now_camera.transform.position);
         button1.transform.LookAt(now_camera.transform.position);
         button2.transform.LookAt(now_camera.transform.position);
@@ -122,6 +132,14 @@ public class BattleRing : MonoBehaviour {
 
         now_rotate = transform.rotation.eulerAngles.y;
         buffer = now_rotate - first_angle_y;
+        if (buffer > 360)
+        {
+            buffer -= 360;
+        }
+        else if (buffer < 0)
+        {
+            buffer += 360;
+        }
         if (buffer > 0 && buffer < 72)
         {
             if (buffer <= 36)
@@ -187,13 +205,14 @@ public class BattleRing : MonoBehaviour {
                 Zoom_In(button);
             }
         }
+        buffer += first_angle_y;
         rotat = Quaternion.Euler(0, buffer, 0);
         transform.rotation = rotat;
-        button.transform.rotation = Quaternion.Euler(first_angle_x, 180, 0);
-        button1.transform.rotation = Quaternion.Euler(first_angle_x, 180, 0);
-        button2.transform.rotation = Quaternion.Euler(first_angle_x, 180, 0);
-        button3.transform.rotation = Quaternion.Euler(first_angle_x, 180, 0);
-        button4.transform.rotation = Quaternion.Euler(first_angle_x, 180, 0);
+        button.transform.rotation = Quaternion.Euler(first_angle_x, 180 + first_angle_y, 0);
+        button1.transform.rotation = Quaternion.Euler(first_angle_x, 180 + first_angle_y, 0);
+        button2.transform.rotation = Quaternion.Euler(first_angle_x, 180 + first_angle_y, 0);
+        button3.transform.rotation = Quaternion.Euler(first_angle_x, 180 + first_angle_y, 0);
+        button4.transform.rotation = Quaternion.Euler(first_angle_x, 180 + first_angle_y, 0);
     }
 
     void Zoom_Out()
@@ -205,7 +224,7 @@ public class BattleRing : MonoBehaviour {
         button4.transform.localScale = new Vector3(1, 1, 1);
     }
 
-    void Zoom_In(GameObject a)
+    void Zoom_In(GameObject a)//放大按鈕
     {
         a.transform.localScale = new Vector3(2, 2, 0);
     }

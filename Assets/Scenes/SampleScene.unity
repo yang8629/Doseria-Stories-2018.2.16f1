@@ -316,13 +316,14 @@ MonoBehaviour:
   now_rotate: 0
   buffer: 0
   camera_rotat: 0
+  pos: 0.4
   button: {fileID: 1803920343}
   button1: {fileID: 1273336585}
   button2: {fileID: 1287884613}
   button3: {fileID: 36983350}
   button4: {fileID: 1431216603}
   now_camera: {fileID: 534669902}
-  offset: {x: 0, y: -0.5, z: 1}
+  offset: {x: 0, y: 0.4, z: 0}
   rotat: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &377627762
 BoxCollider:
@@ -463,10 +464,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1367229202}
+  battle_ring: {fileID: 377627760}
   cameraPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 6.38, z: 0}
-  speed: 25
+  speed: 20
   number: 1.84
   radius: 0
 --- !u!1 &1273336585
@@ -888,6 +890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_count: 0
   battle_ring: {fileID: 377627760}
+  zoomin_camera: {fileID: 534669902}
 --- !u!4 &1684369772
 Transform:
   m_ObjectHideFlags: 0
@@ -927,6 +930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battle_ring: {fileID: 377627760}
+  zoomin_camera: {fileID: 534669902}
 --- !u!1 &1803920343
 GameObject:
   m_ObjectHideFlags: 0

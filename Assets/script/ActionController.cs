@@ -6,6 +6,7 @@ using UnityEngine;
 public class ActionController : MonoBehaviour {
     public int player_count;
     public GameObject battle_ring;
+    public GameObject zoomin_camera;
 
     void Awake()
     {
@@ -35,8 +36,10 @@ public class ActionController : MonoBehaviour {
                     if (BattleInfo.characterInbattle[i].Timer > 10)
                     {
                         BattleInfo.now_character = BattleInfo.characterInbattle[i];
-                        battle_ring.SetActive(true);
-                        Time.timeScale = 0;
+                        BattleInfo.inbattle = false;
+                        zoomin_camera.SendMessage("Zoom");
+                        //battle_ring.SetActive(true);
+                        //Time.timeScale = 0;
                     }
                 }
             }
