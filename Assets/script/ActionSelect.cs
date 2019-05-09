@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class ActionSelect : MonoBehaviour {
     public GameObject battle_ring;
-    public GameObject zoomin_camera;
+    public GameObject cancel_button;
 
     void Attact()
     {
-        BattleInfo.now_character.TimerReset();
-        BattleInfo.inbattle = true;
+        cancel_button.SetActive(true);
         battle_ring.SetActive(false);
-        zoomin_camera.transform.position = BattleInfo.camera_first_position;
-        zoomin_camera.transform.rotation = Quaternion.identity;
-        Time.timeScale = 1;
         Debug.Log("Attact");
     }
 

@@ -95,6 +95,6 @@ public class BattleInfo {
         characterInbattle.Clear();
     }
 
-    public static Vector3 camera_target_distance;
-    public static Vector3 camera_first_position;
+    public static Vector3 camera_target_distance;//紀錄從相機到目標的向量
+    public static Vector3 camera_first_position;//記錄相機最開始的位置
 }

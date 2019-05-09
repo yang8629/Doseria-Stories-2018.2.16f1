@@ -38,8 +38,6 @@ public class ActionController : MonoBehaviour {
                         BattleInfo.now_character = BattleInfo.characterInbattle[i];
                         BattleInfo.inbattle = false;
                         zoomin_camera.SendMessage("Zoom");
-                        //battle_ring.SetActive(true);
-                        //Time.timeScale = 0;
                     }
                 }
             }

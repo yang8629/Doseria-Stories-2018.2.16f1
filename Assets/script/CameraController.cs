@@ -61,10 +61,10 @@ public class CameraController : MonoBehaviour {
 
         //使相機永遠面對著目標物件
         transform.LookAt(target.transform.position);
-        BattleInfo.camera_target_distance = target.transform.position - transform.position;
         if (transform.position.y < 4f)
         {
             CancelInvoke("ZoomIn");
+            BattleInfo.camera_target_distance = target.transform.position - transform.position;
             battle_ring.SetActive(true);
             Time.timeScale = 0;
             number = 1.84f;
