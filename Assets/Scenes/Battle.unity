@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c2d60af85876646b46f7a819f09080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 0.2
   first_angle_x: 0
   first_angle_y: 0
   now_rotate: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
   cameraPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 6.38, z: 0}
-  speed: 20
+  speed: 5
   number: 1.84
   radius: 0
 --- !u!1 &1022249264
