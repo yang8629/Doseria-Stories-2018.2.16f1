@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Name: Angier
   m_EditorClassIdentifier: 
   name: Angier
-  characterObj: {fileID: 0}
+  characterObj: {fileID: 1292856846448350, guid: a470fd3017d05154f82692421b8aac78,
+    type: 2}
   Hp: 100
   Def: 0
   Ag: 3

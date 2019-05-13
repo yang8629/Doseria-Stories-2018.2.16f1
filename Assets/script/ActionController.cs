@@ -35,7 +35,7 @@ public class ActionController : MonoBehaviour {
                     Debug.Log(BattleInfo.characterInbattle[i].Name + ": Timer= " + BattleInfo.characterInbattle[i].Timer);
                     if (BattleInfo.characterInbattle[i].Timer > 10)
                     {
-                        BattleInfo.now_character = BattleInfo.characterInbattle[i];
+                        BattleInfo.now_action_character.NowAction(BattleInfo.characterInbattle[i]);
                         BattleInfo.inbattle = false;
                         zoomin_camera.SendMessage("Zoom");
                     }

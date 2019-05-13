@@ -8,11 +8,12 @@ public class BattleInfo {
     public static List<EnemyInbattle> enemyInbattle = new List<EnemyInbattle>();//敵人資料
     public static List<CharacterInbattle> characterInbattle = new List<CharacterInbattle>();//角色資料
 
-    public static CharacterInbattle now_character;
+    public static CharacterInbattle now_action_character=new CharacterInbattle();
 
     public class CharacterInbattle
     {
         string name;
+        GameObject characterPrefab;
         GameObject characterObj;
         float timer;
         float hp;
@@ -20,11 +21,11 @@ public class BattleInfo {
         float at;
         bool moving;
         bool dead;
-        public void Set(string Name, GameObject characterObj, float Hp, float Ag, float At)
+        public void Set(string Name, GameObject characterPrefab, float Hp, float Ag, float At)
         {
             this.name = Name;
-            this.characterObj = characterObj;
-            this.Timer = 0;
+            this.characterPrefab = characterPrefab;
+            this.TimerReset();
             this.Hp = Hp;
             this.ag = Ag;
             this.At = At;
@@ -34,6 +35,15 @@ public class BattleInfo {
         public string Name
         {
             get { return name; }
+        }
+        public void SetCharacterObj(GameObject characterObj)
+        {
+            this.characterObj = characterObj;
+            Debug.Log(this.CharacterObj);
+        }
+        public GameObject CharacterPrefab
+        {
+            get { return characterPrefab; }
         }
         public GameObject CharacterObj
         {
@@ -70,12 +80,17 @@ public class BattleInfo {
         {
             get { return dead; }
         }
+        public void NowAction(CharacterInbattle buffer)
+        {
+            this.name = buffer.Name;
+            this.characterObj = buffer.CharacterObj;
+        }
     }
 
-    public static void SetCharacterInbattle(string Name, GameObject characterObj, float Hp, float Ag, float At)
+    public static void SetCharacterInbattle(string Name, GameObject characterPrefab, float Hp, float Ag, float At)
     {
         CharacterInbattle buffer = new CharacterInbattle();
-        buffer.Set(Name, characterObj, Hp, Ag, At);
+        buffer.Set(Name, characterPrefab, Hp, Ag, At);
         characterInbattle.Add(buffer);
     }
 

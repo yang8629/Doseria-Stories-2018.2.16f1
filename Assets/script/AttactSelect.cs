@@ -9,7 +9,7 @@ public class AttactSelect : MonoBehaviour {
 
     void Select()
     {
-        BattleInfo.now_character.TimerReset();
+        BattleInfo.now_action_character.TimerReset();
         BattleInfo.inbattle = true;
         zoomin_camera.transform.position = BattleInfo.camera_first_position;
         zoomin_camera.transform.rotation = Quaternion.identity;

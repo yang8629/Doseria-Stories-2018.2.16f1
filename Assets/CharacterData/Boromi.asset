@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Name: Boromi
   m_EditorClassIdentifier: 
   name: Boromi
-  characterObj: {fileID: 0}
+  characterObj: {fileID: 1050854615575742, guid: 3b60387f048cfa24caa023eddb36948d,
+    type: 2}
   Hp: 100
   Def: 0
   Ag: 4

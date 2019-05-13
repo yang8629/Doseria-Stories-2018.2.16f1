@@ -33,10 +33,14 @@ public class CameraController : MonoBehaviour {
 
         //使相機永遠面對著目標物件
         //transform.LookAt(target.transform.position);
+
+        //transform.Rotate(new Vector3(0, 1, 0));
     }
 
     void Zoom()
     {
+        target = BattleInfo.now_action_character.CharacterObj;
+        Debug.Log(BattleInfo.now_action_character.CharacterObj);
         //由於我這個範例是y和z軸的移動，而x軸不會改變，所以要先設定好x軸的初始位置
         cameraPosition.x = transform.position.x;
         transform.position = cameraPosition;
