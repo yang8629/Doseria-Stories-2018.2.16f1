@@ -5,11 +5,15 @@ using UnityEngine;
 public class ActionSelect : MonoBehaviour {
     public GameObject battle_ring;
     public GameObject cancel_button;
+    public BoxCollider enemy1;
+    public BoxCollider enemy2;
 
     void Attact()
     {
         cancel_button.SetActive(true);
         battle_ring.SetActive(false);
+        enemy1.enabled = true;
+        enemy2.enabled = true;
         Debug.Log("Attact");
     }
 

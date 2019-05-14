@@ -87,7 +87,7 @@ public class BattleInfo {
         }
     }
 
-    public static void SetCharacterInbattle(string Name, GameObject characterPrefab, float Hp, float Ag, float At)
+    public static void SetCharacterInbattle(string Name, GameObject characterPrefab, float Hp, float Ag, float At)//將角色資料寫入characterInbattle
     {
         CharacterInbattle buffer = new CharacterInbattle();
         buffer.Set(Name, characterPrefab, Hp, Ag, At);
@@ -112,4 +112,11 @@ public class BattleInfo {
 
     public static Vector3 camera_target_distance;//紀錄從相機到目標的向量
     public static Vector3 camera_first_position;//記錄相機最開始的位置
+
+    public static GameObject now_select;
+    public static void ClickDown(GameObject now,int kind)//設定目前選到的 kind用來判定種類
+    {
+        now_select = now;
+        Debug.Log(now_select);
+    }
 }
